@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}{{ period | capitalize }} Archives - {{ SITENAME }}{% endblock %}
+
+{% block content %}
+<h1>{{ period | capitalize }} Archives</h1>
+
+<ul>
+{% for article in dates %}
+    <li>
+        <span>{{ article.date.strftime('%Y-%m-%d') }}</span> —
+        <a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a>
+    </li>
+{% endfor %}
+</ul>
+
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}{{ category }} - {{ SITENAME }}{% endblock %}
+
+{% block content %}
+<h1>Category: {{ category }}</h1>
+
+<ul>
+{% for article in articles %}
+    <li>
+        <a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a>
+        — {{ article.date.strftime('%Y-%m-%d') }}
+    </li>
+{% endfor %}
+</ul>
+
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}{{ article.title }} - {{ SITENAME }}{% endblock %}
+
+{% block content %}
+<article>
+    <h1>{{ article.title }}</h1>
+
+    <p>
+        By <a href="{{ SITEURL }}/{{ article.author.url }}">{{ article.author }}</a>
+        on {{ article.date.strftime('%B %d, %Y') }}
+    </p>
+
+    <div>
+        {{ article.content }}
+    </div>
+
+    {% if article.tags %}
+    <p>
+        Tags:
+        {% for tag in article.tags %}
+            <a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a>{% if not loop.last %}, {% endif %}
+        {% endfor %}
+    </p>
+    {% endif %}
+</article>
+{% endblock %}

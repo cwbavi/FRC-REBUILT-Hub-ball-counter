@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>{% block title %}{{ SITENAME }}{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="{{ SITEURL }}/theme/css/style.css">
+</head>
+
+<body>
+
+<header class="site-header">
+    <a href="{{ SITEURL }}" class="site-logo">
+        <div class="logo-circle">86</div>
+        <div class="logo-text">
+            <div class="team-name">{{ SITENAME }}</div>
+            <div class="team-tagline">Train. Build. Resist.</div>
+        </div>
+    </a>
+
+    <nav class="header-nav">
+    </nav>
+</header>
+
+<aside class="sidebar-nav">
+    <div class="nav-section">
+        <div class="nav-section-title">Pages</div>
+        <ul>
+            {% for page in pages %}
+            <li>
+                <a href="{{ SITEURL }}/{{ page.url }}">{{ page.title }}</a>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</aside>
+
+<div class="main-content">
+    <div class="content-wrapper">
+        {% block content %}
+        {% endblock %}
+    </div>
+</div>
+
+<footer class="site-footer">
+    &copy; {{ SITENAME }} {{ CURRENT_YEAR }}
+</footer>
+
+</body>
+</html>
