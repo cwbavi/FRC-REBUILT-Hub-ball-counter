@@ -182,6 +182,11 @@ li {
   overflow-y: auto;
 }
 
+.sidebar-nav ul {
+  padding-left: 0;
+  margin-left: 0;
+}
+
 .nav-section {
   margin-bottom: 30px;
 }
@@ -582,7 +587,7 @@ tbody tr:hover {
 
 .hero-title {
   margin: 0;
-  font-size: 56px;
+  font-size: 100px;
 }
 
 .section-heading {
@@ -897,4 +902,22 @@ h6:hover .heading-anchor {
     height: 80px;
     font-size: 40px;
   }
+}
+
+.filter-black {
+  filter: brightness(0%);
+}
+
+/* if sidebar disappears */
+body.index-page .main-content {
+  margin-left: 0;
+}
+
+body.index-page .sidebar-nav {
+  display: none;
+}
+
+body.index-page .main-content {
+  margin-left: 0;
+  width: 100%;
 }

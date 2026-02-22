@@ -15,7 +15,7 @@
         <div class="logo-circle">86</div>
         <div class="logo-text">
             <div class="team-name">{{ SITENAME }}</div>
-            <div class="team-tagline">Train. Build. Resist.</div>
+            <div class="team-tagline">Going against the current since 1996</div>
         </div>
     </a>
 
@@ -23,19 +23,23 @@
     </nav>
 </header>
 
+{% if not (page_name == 'index') %}
 <aside class="sidebar-nav">
     <div class="nav-section">
-        <div class="nav-section-title">Pages</div>
         <ul>
-            {% for page in pages %}
+            {% for p in pages %}
             <li>
-                <a href="{{ SITEURL }}/{{ page.url }}">{{ page.title }}</a>
+                <a href="{{ SITEURL }}/{{ p.url }}"
+                class="{% if page and page.url == p.url %}active{% endif %}">
+                    {{ p.title }}
+                </a>
             </li>
             {% endfor %}
         </ul>
     </div>
 </aside>
-
+{% endif %}
+<body class="{% if page_name == 'index' %}index-page{% endif %}"></body>
 <div class="main-content">
     <div class="content-wrapper">
         {% block content %}
