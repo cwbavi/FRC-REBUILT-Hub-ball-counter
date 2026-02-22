@@ -921,3 +921,8 @@ body.index-page .main-content {
   margin-left: 0;
   width: 100%;
 }
+
+body.index-page .site-footer {
+  margin-left: 0;
+  width: 100%;
+}
